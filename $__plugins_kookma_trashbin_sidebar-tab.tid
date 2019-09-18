@@ -32,8 +32,7 @@ type: text/vnd.tiddlywiki
 <$count filter='[tag[$:/tags/trashbin]]'/> items in trash.
 </$list>
 <$list filter="[tag[$:/tags/trashbin]search:title[$:/trashbin/]sortan[]]" emptyMessage="Trash bin is empty">
-
-# <div class="kk-trashbin-row">
+<div class="kk-trashbin-row">
 	<div class="kk-trashbin-link"><<show-link>></div>
 	<div class="kk-trashbin-recycle"><<recycle-button>></div>
 	<div class="kk-trashbin-delete"><<delete-button>></div>
