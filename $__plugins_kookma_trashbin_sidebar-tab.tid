@@ -1,0 +1,43 @@
+caption: Trashbin
+created: 20190613131234955
+creator: HC Haase
+modified: 20190918110704098
+modifier: HC Haase
+tags: $:/tags/MoreSideBar
+title: $:/plugins/kookma/trashbin/sidebar-tab
+type: text/vnd.tiddlywiki
+
+\define show-link()
+<$link to=<<currentTiddler>> ><$text text={{{ [<currentTiddler>removeprefix[$:/trashbin/]] }}} /> </$link>
+\end
+
+\define recycle-button()
+{{||$:/plugins/kookma/trashbin/viewtoolbar-button}}
+\end
+
+\define delete-button()
+<$button class="tc-btn-invisible" tooltip="Delete permanently">
+{{$:/plugins/kookma/trashbin/images/times.svg}}
+<$action-deletetiddler $tiddler=<<currentTiddler>> />
+</$button>
+\end
+
+<div class="kk-trahbin-ui">
+
+<span class="kk-trahbin-ui-controls">
+<<trashbin-empty-bin>> <<restore-all>>
+</span>
+
+<$list filter='[tag[$:/tags/trashbin]limit[1]]'  variable=null>
+<$count filter='[tag[$:/tags/trashbin]]'/> items in trash.
+</$list>
+<$list filter="[tag[$:/tags/trashbin]search:title[$:/trashbin/]sortan[]]" emptyMessage="Trash bin is empty">
+
+# <div class="kk-trashbin-row">
+	<div class="kk-trashbin-link"><<show-link>></div>
+	<div class="kk-trashbin-recycle"><<recycle-button>></div>
+	<div class="kk-trashbin-delete"><<delete-button>></div>
+</div>
+</$list>
+
+</div>
