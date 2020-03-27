@@ -1,0 +1,33 @@
+created: 20200327085342927
+modified: 20200327195225059
+tags: 
+title: $:/plugins/kookma/trashbin/templates/title
+type: text/vnd.tiddlywiki
+
+\define title-styles()
+fill:$(foregroundColor)$;
+\end
+<div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<$set name="tv-wikilinks" value={{$:/config/Tiddlers/TitleLinks}}>
+<$link>
+<$set name="foregroundColor" value={{##color}}>
+<span class="tc-tiddler-title-icon" style=<<title-styles>>>
+<$transclude tiddler={{##icon}}>
+<$transclude tiddler={{$:/config/DefaultTiddlerIcon}}/>
+</$transclude>
+</span>
+</$set>
+<$list filter="[{##title}removeprefix[$:/]]">
+<h2 class="tc-title" title={{$:/language/SystemTiddler/Tooltip}}>
+<span class="tc-system-title-prefix">$:/</span><$text text=<<currentTiddler>>/>
+</h2>
+</$list>
+<$list filter="[{##title}!prefix[$:/]]">
+<h2 class="tc-title">
+<$view field="title"/>
+</h2>
+</$list>
+</$link>
+</$set>
+</div></div>

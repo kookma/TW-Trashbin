@@ -1,0 +1,9 @@
+created: 20200327083449383
+modified: 20200327121119927
+tags: 
+title: $:/plugins/kookma/trashbin/templates/body
+type: text/vnd.tiddlywiki
+
+<$list filter="[<currentTiddler>getindex[plugin-type]]" variable=ignore emptyMessage="""<$transclude index="text" mode="block"/>""">
+<h2 style="text-align:center">This is a plugin!</h2>
+</$list>

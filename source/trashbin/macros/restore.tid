@@ -1,0 +1,41 @@
+created: 20190710105439064
+modified: 20200327170445307
+title: $:/plugins/kookma/trashbin/macros/restore
+type: text/vnd.tiddlywiki
+
+\define open-restoredTid-in-story-river()
+<$action-listops $tiddler="$:/StoryList"    $field='list'  $subfilter="""[[$(restoredTid)$]]+[putfirst[]]"""/>
+\end
+
+\define restoreTid(tiddler)
+<$list filter="[<__tiddler__>indexes[]] -title" variable="fieldName">
+ <$action-setfield 
+   $tiddler=<<restoredTid>> 
+	 $field=<<fieldName>> 
+	 $value={{{ [<__tiddler__>getindex<fieldName>] }}} 
+ />
+</$list>
+<$action-sendmessage $message="tm-close-tiddler" $param=<<__tiddler__>> />
+<$action-deletetiddler $tiddler=<<__tiddler__>> />
+<$macrocall $name="open-restoredTid-in-story-river" />
+\end
+
+
+\define restore(tiddler)
+<$vars 
+  restoredTid={{{ [<__tiddler__>getindex[title]] }}} 
+  isExisted= {{{ [<__tiddler__>getindex[title]has[title]] }}} 
+  >
+<$reveal type="nomatch" text=<<isExisted>> default=<<restoredTid>> >
+<$macrocall $name="restoreTid" tiddler=<<__tiddler__>> />
+</$reveal>
+
+<$reveal type="match" text=<<isExisted>> default=<<restoredTid>> >
+  <$action-sendmessage $message="tm-notify" 
+   $param="$:/plugins/kookma/trashbin/restore-notification" 
+	 restoredTiddler=<<restoredTid>>
+	/>
+</$reveal>
+
+</$vars>
+\end

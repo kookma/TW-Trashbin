@@ -1,0 +1,14 @@
+created: 20200325121220142
+modified: 20200325171839260
+tags: 
+title: $:/plugins/kookma/trashbin/readme
+type: text/vnd.tiddlywiki
+
+; Trashbin
+The concept behind Trashbin plugin is to have a simple mechanism to move deleted tiddlers to Trashbin and be able to restore them later if required.
+
+; Code and demo
+For learning plugin features, mechanism, terminology, syntax, tutorial and examples see the plugin demo and code pages
+
+* Demo: https://kookma.github.io/TW-Trashbin/
+* Code: https://github.com/kookma/TW-Trashbin

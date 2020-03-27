@@ -1,0 +1,11 @@
+created: 20200327084049139
+modified: 20200327120921036
+tags: 
+title: $:/plugins/kookma/trashbin/templates/tags
+type: text/vnd.tiddlywiki
+
+<div class="tc-tags-wrapper">
+<$vars tagsIndex={{{[<currentTiddler>getindex[tags]]}}}>
+<$list filter="[enlist<tagsIndex>]" template="$:/core/ui/TagTemplate" storyview="pop"/>
+</$vars>
+</div>

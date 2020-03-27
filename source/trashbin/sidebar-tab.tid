@@ -1,0 +1,52 @@
+caption: Trashbin
+created: 20190613131234955
+modified: 20200327195640554
+tags: $:/tags/SideBar
+title: $:/plugins/kookma/trashbin/sidebar-tab
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/trashbin/macros/sort
+\import $:/plugins/kookma/trashbin/macros/restore
+\import $:/plugins/kookma/trashbin/macros/confirm-empty
+\import $:/plugins/kookma/trashbin/macros/bulk-operation
+
+\define show-link()
+<$link to=<<currentTiddler>> ><$text text={{{ [<currentTiddler>removeprefix[$:/trashbin/]] }}} /> </$link>&nbsp;<span style="float:right;padding-right:10px;font-size:smaller;" title="Date Deleted"><$view field="modified" format="date" template="0MM/0DD/YYYY 0hh:0mm AM"/></span>
+\end
+
+\define recycle-button()
+{{||$:/plugins/kookma/trashbin/ui/toolbar-button}}
+\end
+
+\define delete-button()
+<$button class="tc-btn-invisible" tooltip="Delete permanently">
+{{$:/plugins/kookma/trashbin/images/times.svg}}
+<$action-deletetiddler $tiddler=<<currentTiddler>> />
+</$button>
+\end
+
+\define trashbin-siderbar-ui()
+<div class="kk-trahbin-ui">
+
+<span class="kk-trahbin-ui-controls">
+<<trashbin-empty-bin>> <<restore-all>> <<sort-by>>
+
+</span>&nbsp;<span style="font-size:smaller">
+<$list filter='[tag[$:/tags/trashbin]prefix[$:/trashbin/]limit[1]]'  variable=null emptyMessage="Trash bin is empty">
+<$count filter='[tag[$:/tags/trashbin]]'/> items in Trashbin
+</$list></span>
+
+<$list filter="[tag[$:/tags/trashbin]prefix[$:/trashbin/]$(sortType)$]">
+<div class="kk-trashbin-row">
+	<div class="kk-trashbin-link"><<show-link>></div>
+	<div class="kk-trashbin-recycle"><<recycle-button>></div>
+	<div class="kk-trashbin-delete"><<delete-button>></div>
+</div>
+</$list>
+
+</div>
+\end
+
+<$vars sortType={{{[<tempSortTid>get[text]] ~[[]] }}}>
+<<trashbin-siderbar-ui>>
+</$vars>

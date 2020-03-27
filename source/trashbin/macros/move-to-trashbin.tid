@@ -1,0 +1,25 @@
+created: 20190710071039480
+modified: 20200327170456915
+title: $:/plugins/kookma/trashbin/macros/move-to-trashbin
+type: text/vnd.tiddlywiki
+
+\define trashTidName() <<unusedtitle baseName:"$(trashTiddler)$">>
+
+\define move-to-trashbin(tiddler)
+<$list filter="[<__tiddler__>has[title]]" variable=ignore> <!-- ignore missing tiddlers -->
+<$vars trashTiddler={{{ [<__tiddler__>addprefix[$:/trashbin/]] }}}>
+<$wikify name="trashTid" text=<<trashTidName>> >
+<$list filter="[<__tiddler__>fields[]]" variable="fieldName">
+<$action-setfield 
+ $tiddler=<<trashTid>>
+ $index=<<fieldName>>
+ $value={{{[<__tiddler__>get<fieldName>] }}}
+/>
+</$list>
+<$action-setfield $tiddler=<<trashTid>> tags="$:/tags/trashbin"/>
+</$wikify>
+<$action-sendmessage $message="tm-close-tiddler" $param=<<__tiddler__>> />
+<$action-deletetiddler $tiddler=<<__tiddler__>> />
+</$vars>
+</$list>
+\end

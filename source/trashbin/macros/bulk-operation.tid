@@ -1,0 +1,27 @@
+created: 20190723115934925
+modified: 20200327170128541
+title: $:/plugins/kookma/trashbin/macros/bulk-operation
+type: text/vnd.tiddlywiki
+
+\define delete-trashed-tiddlers()
+<$list filter="[tag[$:/tags/trashbin]search:title[$:/trashbin/]]" variable="Item">
+<$action-deletetiddler $tiddler=<<Item>> />
+</$list>
+\end
+
+\define trashbin-empty-bin()
+<$macrocall $name="trashbin-confirm-delete"
+btnLabel="Empty Trashbin"
+countFilter="[tag[$:/tags/trashbin]search:title[$:/trashbin/]]"
+actionMacro=<<delete-trashed-tiddlers>>
+stateTiddler="$:/state/trashbin/emptyTrashBin"
+/>
+\end
+
+\define restore-all()
+<$button tooltip="Restore all" class="tc-btn-invisible tc-tiddlylink"> {{$:/plugins/kookma/trashbin/images/recycle}}
+<$list filter="[tag[$:/tags/trashbin]search:title[$:/trashbin/]sort[]]" variable="Item">
+<$macrocall $name="restore" tiddler=<<Item>> />
+</$list>
+</$button>
+\end

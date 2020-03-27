@@ -1,0 +1,33 @@
+created: 20200327081227209
+modified: 20200327193239354
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/trashbin/viewtemplate/trash-item
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]">
+<div class="viewtrash">
+{{||$:/plugins/kookma/trashbin/templates/title}}
+{{||$:/plugins/kookma/trashbin/templates/subtitle}}
+{{||$:/plugins/kookma/trashbin/templates/tags}}
+{{||$:/plugins/kookma/trashbin/templates/body}}
+<!--
+<$list filter="[<currentTiddler>indexes[]] -text -tags" variable=idx>
+''<<idx>>'': <$transclude index=<<idx>>/><br/>
+</$list>
+-->
+</div>
+</$list>
+
+<style>
+.viewtrash{
+ margin-top:10px;
+ border: 1px solid #ffffff;
+ padding: 5px 10px;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.viewtrash .tc-tags-wrapper,
+.viewtrash .tc-title{
+display:inline;
+}
+}
+</style>

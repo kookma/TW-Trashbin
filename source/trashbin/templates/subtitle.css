@@ -1,0 +1,5 @@
+<div class="tc-subtitle">
+<$link to={{##modifier}}>
+<$view index="modifier"/>
+</$link> <$view index="modified" format="date" template={{$:/language/Tiddler/DateFormat}}/>
+</div>
