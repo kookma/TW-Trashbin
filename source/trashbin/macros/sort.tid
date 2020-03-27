@@ -1,9 +1,9 @@
 created: 20200327141043944
-modified: 20200327184412555
+modified: 20200327201042137
 title: $:/plugins/kookma/trashbin/macros/sort
 type: text/vnd.tiddlywiki
 
-\define tempSortTid() x$:/keepstate/trashbin/sort
+\define tempSortTid() $:/keepstate/trashbin/sort
 
 \define show-icons()
 <$vars state-alpha-down="sortan[title]" state-alpha-up="!sortan[title]"

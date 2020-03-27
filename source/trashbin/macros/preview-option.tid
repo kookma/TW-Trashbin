@@ -1,0 +1,25 @@
+created: 20200327203154169
+modified: 20200327205705076
+tags: 
+title: $:/plugins/kookma/trashbin/macros/preview-option
+type: text/vnd.tiddlywiki
+
+\define viewTemplateTid() $:/plugins/kookma/trashbin/viewtemplate/trash-item
+\define styleTid()        $:/plugins/kookma/trashbin/styles/show-trashed
+
+\define preview-option()
+<$reveal type="nomatch" stateTitle=<<viewTemplateTid>> stateField="tags" text="$:/tags/ViewTemplate" default="">
+<$button setTitle=<<viewTemplateTid>> setField="tags" setTo="$:/tags/ViewTemplate" class="tc-btn-invisible" tooltip="Show trash item preview"> 
+{{$:/core/images/preview-open}}
+<$action-setfield $tiddler=<<styleTid>>  tags="$:/tags/Stylesheet"/> 
+</$button>
+</$reveal>
+<$reveal type="match" stateTitle=<<viewTemplateTid>> stateField="tags" text="$:/tags/ViewTemplate" default="">
+<$button setTitle=<<viewTemplateTid>> setField="tags" setTo="" class="tc-btn-invisible" tooltip="Hide trash item preview"> 
+{{$:/core/images/preview-closed}}
+<$action-setfield $tiddler=<<styleTid>>  tags=""/> 
+</$button>
+</$reveal>
+\end
+
+<<preview-option>>

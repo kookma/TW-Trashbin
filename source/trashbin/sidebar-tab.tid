@@ -1,6 +1,6 @@
 caption: Trashbin
 created: 20190613131234955
-modified: 20200327195640554
+modified: 20200327204641199
 tags: $:/tags/SideBar
 title: $:/plugins/kookma/trashbin/sidebar-tab
 type: text/vnd.tiddlywiki
@@ -9,6 +9,7 @@ type: text/vnd.tiddlywiki
 \import $:/plugins/kookma/trashbin/macros/restore
 \import $:/plugins/kookma/trashbin/macros/confirm-empty
 \import $:/plugins/kookma/trashbin/macros/bulk-operation
+\import $:/plugins/kookma/trashbin/macros/preview-option
 
 \define show-link()
 <$link to=<<currentTiddler>> ><$text text={{{ [<currentTiddler>removeprefix[$:/trashbin/]] }}} /> </$link>&nbsp;<span style="float:right;padding-right:10px;font-size:smaller;" title="Date Deleted"><$view field="modified" format="date" template="0MM/0DD/YYYY 0hh:0mm AM"/></span>
@@ -29,7 +30,7 @@ type: text/vnd.tiddlywiki
 <div class="kk-trahbin-ui">
 
 <span class="kk-trahbin-ui-controls">
-<<trashbin-empty-bin>> <<restore-all>> <<sort-by>>
+<<trashbin-empty-bin>> <<restore-all>> <<sort-by>> <<preview-option>>
 
 </span>&nbsp;<span style="font-size:smaller">
 <$list filter='[tag[$:/tags/trashbin]prefix[$:/trashbin/]limit[1]]'  variable=null emptyMessage="Trash bin is empty">
