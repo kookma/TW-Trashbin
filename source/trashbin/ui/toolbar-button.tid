@@ -3,7 +3,7 @@ created: 20190623140751496
 creator: Mohammad
 description: <$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]" emptyMessage={{$:/language/Buttons/Trashbin/Hint/Move}}>{{$:/language/Buttons/Trashbin/Hint/Recycle}}</$list>
 list-after: $:/core/ui/Buttons/delete
-modified: 20200328120640044
+modified: 20200328140420576
 modifier: Mohammad
 tags: $:/tags/ViewToolbar $:/tags/EditToolbar
 title: $:/plugins/kookma/trashbin/ui/toolbar-button
@@ -15,32 +15,34 @@ type: text/vnd.tiddlywiki
 
 <!-- move to trashbin -->
 <$list filter="[all[current]!tag[$:/tags/trashbin]!prefix[$:/trashbin/]]">
-<$button  
-  aria-label={{$:/language/Buttons/Trashbin/Caption/Move}} 
-  tooltip={{$:/language/Buttons/Trashbin/Hint/Move}}
-  class=<<tv-config-toolbar-class>> >
-    <$macrocall $name="move-to-trashbin" tiddler=<<currentTiddler>> />	
-    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
-      {{$:/plugins/kookma/trashbin/images/trash-alt}}&nbsp;
-    </$list>
-    <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
-     <span class="tc-btn-text"><$text text={{$:/language/Buttons/Trashbin/Caption/Move}}/></span>
-    </$list>
+<$button 
+ aria-label={{$:/language/Buttons/Trashbin/Caption/Move}}
+ tooltip={{$:/language/Buttons/Trashbin/Hint/Move}} class=<<tv-config-toolbar-class>> >
+  <$macrocall $name="move-to-trashbin" tiddler=<<currentTiddler>> />	
+  <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+    {{$:/plugins/kookma/trashbin/images/trash-alt}}
+  </$list>
+  <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+    <span class="tc-btn-text">
+		  &nbsp;<$text text={{$:/language/Buttons/Trashbin/Caption/Move}}/>
+    </span>
+  </$list>
 </$button>
 </$list>
 
 <!-- recycle from trashbin -->
 <$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]">
-<$button 
-  aria-label={{$:/language/Buttons/Trashbin/Caption/Recycle}}
-  tooltip={{$:/language/Buttons/Trashbin/Hint/Recycle}}
-  class=<<tv-config-toolbar-class>> >
-   <$macrocall $name="restore" tiddler=<<currentTiddler>>  />
-   <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
-     {{$:/plugins/kookma/trashbin/images/recycle}}&nbsp;
-   </$list>
-   <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
-     <span class="tc-btn-text"><$text text={{$:/language/Buttons/Trashbin/Caption/Recycle}}/></span>
-   </$list>
+<$button
+ aria-label={{$:/language/Buttons/Trashbin/Caption/Recycle}}
+ tooltip={{$:/language/Buttons/Trashbin/Hint/Recycle}} class=<<tv-config-toolbar-class>> >
+  <$macrocall $name="restore" tiddler=<<currentTiddler>>  />
+  <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+    {{$:/plugins/kookma/trashbin/images/recycle}}
+  </$list>
+  <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+    <span class="tc-btn-text">&nbsp;
+      <$text text={{$:/language/Buttons/Trashbin/Caption/Recycle}}/>
+   </span>
+  </$list>
 </$button>
 </$list>

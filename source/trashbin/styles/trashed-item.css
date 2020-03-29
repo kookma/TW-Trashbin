@@ -1,0 +1,2 @@
+/* set style for trashed tiddlers */
+[data-tags ~="$:/tags/trashbin"] { border: 1px solid crimson; }

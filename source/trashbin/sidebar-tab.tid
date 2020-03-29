@@ -1,6 +1,6 @@
 caption: Trashbin
 created: 20190613131234955
-modified: 20200327204641199
+modified: 20200329155207783
 tags: $:/tags/SideBar
 title: $:/plugins/kookma/trashbin/sidebar-tab
 type: text/vnd.tiddlywiki
@@ -22,6 +22,9 @@ type: text/vnd.tiddlywiki
 \define delete-button()
 <$button class="tc-btn-invisible" tooltip="Delete permanently">
 {{$:/plugins/kookma/trashbin/images/times.svg}}
+<$list filter="[list[$:/StoryList]] +[field:title<currentTiddler>>]" variable=ignore>
+<$action-sendmessage $message="tm-close-tiddler" $param=<<<currentTiddler>> />
+</$list>
 <$action-deletetiddler $tiddler=<<currentTiddler>> />
 </$button>
 \end
@@ -32,10 +35,12 @@ type: text/vnd.tiddlywiki
 <span class="kk-trahbin-ui-controls">
 <<trashbin-empty-bin>> <<restore-all>> <<sort-by>> <<preview-option>>
 
-</span>&nbsp;<span style="font-size:smaller">
+</span>&nbsp;
+<span style="font-size:smaller">
 <$list filter='[tag[$:/tags/trashbin]prefix[$:/trashbin/]limit[1]]'  variable=null emptyMessage="Trash bin is empty">
 <$count filter='[tag[$:/tags/trashbin]]'/> items in Trashbin
-</$list></span>
+</$list>
+</span>
 
 <$list filter="[tag[$:/tags/trashbin]prefix[$:/trashbin/]$(sortType)$]">
 <div class="kk-trashbin-row">

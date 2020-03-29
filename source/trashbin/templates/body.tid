@@ -1,9 +1,46 @@
-created: 20200327083449383
-modified: 20200327121119927
+created: 20200329133632160
+modified: 20200329155701084
 tags: 
 title: $:/plugins/kookma/trashbin/templates/body
 type: text/vnd.tiddlywiki
 
-<$list filter="[<currentTiddler>getindex[plugin-type]]" variable=ignore emptyMessage="""<$transclude index="text" mode="block"/>""">
-<h2 style="text-align:center">This is a plugin!</h2>
+\define show-plain() 
+<div class="tc-tiddler-body">
+<pre><$transclude index="text" mode="block"/></pre>
+</div>
+\end
+
+\define show() 
+<div class="tc-tiddler-body">
+<$transclude index="text" mode="block"/>
+</div>
+\end
+
+
+<!-- json tiddlers including plugins -->
+<$list filter="[<currentTiddler>getindex[type]match[application/json]]" variable=ignore>
+<$list filter="[<currentTiddler>getindex[plugin-type]]" variable=ignore emptyMessage=<<show-plain>> >
+<div class="tc-binary-warning">
+This tiddler contains plugin!
+</div>
+</$list>
+</$list>
+<!-- text tiddlers including: css, plain, dictionary -->
+<$list filter="[<currentTiddler>getindex[type]match[application/x-tiddler-dictionary]]
+[<currentTiddler>getindex[type]match[text/plain]]
+[<currentTiddler>getindex[type]match[text/css]]" variable=ignore>
+<<show-plain>>
+</$list>
+
+
+<!-- other tiddlers like image, vnd.tiddlywiki -->
+<$list filter="[<currentTiddler>getindex[type]]" variable=type emptyMessage=<<show>> >
+<$list filter="[<type>match[text/vnd.tiddlywiki]]" variable=ignore>
+<$transclude index="text" mode="block"/>
+</$list>
+<$list filter="[<type>search:title[image]]" variable=ignore>
+<div class="tc-binary-warning">
+This tiddler contains image data!
+</div>
+</$list>
 </$list>

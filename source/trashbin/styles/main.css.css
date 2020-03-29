@@ -38,6 +38,3 @@
 .kk-trashbin-row:hover {
 	background-color: #f6f6f6;
 }
-
-/* set border for trashed tiddlers */
-[data-tags ~="$:/tags/trashbin"] { border: 1px solid crimson; }

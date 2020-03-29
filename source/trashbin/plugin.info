@@ -2,7 +2,7 @@
 	"title": "$:/plugins/kookma/trashbin",
 	"description": "Trashbin",
 	"author": "Mohammad Rahmani",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"core-version": ">=5.1.22",
 	"source": "https://github.com/kookma/TW-Trashbin",
 	"list": "readme history license",

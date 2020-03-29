@@ -1,10 +1,11 @@
 created: 20200325121105806
-modified: 20200325121321690
+modified: 20200329164719151
 tags: 
 title: $:/plugins/kookma/trashbin/history
 type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Trashbin/#ChangeLog
 
-* ''2.1.0'' -- 2020.03.25 -- stable release
+* ''1.2.0'' -- 2020.03.29 -- bug fix and doc improvement
+* ''1.1.2'' -- 2020.03.28 -- stable release with new features and bug fixes
 * ''0.1.0'' -- 2019.02.12 -- mature public release
