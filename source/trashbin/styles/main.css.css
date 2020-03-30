@@ -7,21 +7,19 @@
     fill:#aaaaaa;
 }
 
-.kk-trahbin-ui button:hover svg {
-    fill: #000000; 
-}
-
 .kk-trahbin-ui .kk-trahbin-ui-controls svg{
  width:1.2em;
  height:1.2em;	
 }
 
-/* trashbin items ui */
+
+/* trashbin items list ui */
 .kk-trashbin-row{
 	display: flex;	
 	width: 95%;
 	flex-wrap: wrap;
 }
+
 
 .kk-trashbin-row .kk-trashbin-delete,
 .kk-trashbin-row .kk-trashbin-restore {
@@ -35,6 +33,9 @@
 	padding-right: 10px;
 }
 
-.kk-trashbin-row:hover {
-	background-color: #f6f6f6;
-}
+.kk-trashbin-row:hover { background-color: #f6f6f6; }
+
+/* UI button fade-in*/
+.kk-trahbin-ui   button:hover svg         { fill: #000000; }
+.kk-trahbin-ui  .kk-trashbin-ui-btn       { opacity:0.5; }
+.kk-trahbin-ui  .kk-trashbin-ui-btn:hover { opacity:1.0; }
