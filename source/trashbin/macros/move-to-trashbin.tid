@@ -1,5 +1,5 @@
 created: 20190710071039480
-modified: 20200327170456915
+modified: 20200410061108463
 title: $:/plugins/kookma/trashbin/macros/move-to-trashbin
 type: text/vnd.tiddlywiki
 
@@ -19,7 +19,10 @@ type: text/vnd.tiddlywiki
 <$action-setfield $tiddler=<<trashTid>> tags="$:/tags/trashbin"/>
 </$wikify>
 <$action-sendmessage $message="tm-close-tiddler" $param=<<__tiddler__>> />
-<$action-deletetiddler $tiddler=<<__tiddler__>> />
+<$list filter="[<__tiddler__>has[draft.of]]" variable=ignore emptyMessage="""<$action-deletetiddler $tiddler=<<__tiddler__>> />""">
+<$action-deletetiddler $tiddler={{{[<__tiddler__>get[draft.of]]}}} /><!--delete main tiddler-->
+<$action-deletetiddler $tiddler=<<__tiddler__>> /> <!--delete draft tiddler-->
+</$list>
 </$vars>
 </$list>
 \end
