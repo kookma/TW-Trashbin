@@ -1,11 +1,10 @@
-created: 20200325121105806
-modified: 20220111044147290
-tags: 
+modified: 20221202071533307
 title: $:/plugins/kookma/trashbin/history
 type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Trashbin/#ChangeLog
 
+* ''1.2.4'' -- 2022.12.02 -- update to TW 5.2.3 and minor bug fixes
 * ''1.2.3'' -- 2022.01.11 -- update to TW 5.2.1
 * ''1.2.2'' -- 2020.04.10 -- bug fix in remove draft tiddlers to trashbin
 * ''1.2.1'' -- 2020.03.30 -- bug fix and doc improvement and UI fade correction

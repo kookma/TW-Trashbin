@@ -1,3 +1,7 @@
+modified: 20221202071533308
+title: $:/plugins/kookma/trashbin/templates/subtitle
+type: text/vnd.tiddlywiki
+
 <div class="tc-subtitle">
 <$link to={{##modifier}}>
 <$view index="modifier"/>
