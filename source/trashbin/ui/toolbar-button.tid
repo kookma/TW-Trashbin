@@ -1,6 +1,5 @@
 caption: {{$:/plugins/kookma/trashbin/images/trash-alt}} {{$:/language/Buttons/Trashbin/Caption/Move}}
 description: <$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]" emptyMessage={{$:/language/Buttons/Trashbin/Hint/Move}}>{{$:/language/Buttons/Trashbin/Hint/Recycle}}</$list>
-list-after: $:/core/ui/Buttons/delete
 tags: $:/tags/ViewToolbar $:/tags/EditToolbar
 title: $:/plugins/kookma/trashbin/ui/toolbar-button
 type: text/vnd.tiddlywiki

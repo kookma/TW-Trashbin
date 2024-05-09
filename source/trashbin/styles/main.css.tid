@@ -1,3 +1,7 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/trashbin/styles/main.css
+type: text/vnd.tiddlywiki
+
 /* trashbin main ui */
 .kk-trashbin-ui{
 	min-width:320px; /* controls the minimum width of whole ui */
@@ -33,9 +37,12 @@
 	padding-right: 10px;
 }
 
-.kk-trashbin-row:hover { background-color: #f6f6f6; }
+/* old:  .kk-trashbin-row:hover { background-color: #f6f6f6; } */
+.kk-trashbin-row:hover { background-color: <<colour pre-background>>; }
 
 /* UI button fade-in*/
 .kk-trahbin-ui   button:hover svg         { fill: #000000; }
 .kk-trahbin-ui  .kk-trashbin-ui-btn       { opacity:0.5; }
 .kk-trahbin-ui  .kk-trashbin-ui-btn:hover { opacity:1.0; }
+
+
