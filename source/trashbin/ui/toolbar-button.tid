@@ -1,12 +1,15 @@
-caption: {{$:/plugins/kookma/trashbin/images/trash-alt}} {{$:/language/Buttons/Trashbin/Caption/Move}}
+caption: {{$:/plugins/kookma/trashbin/images/trash-alt}}&nbsp;{{$:/language/Buttons/Trashbin/Caption/Move}}
+created: 20190623140751496
 description: <$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]" emptyMessage={{$:/language/Buttons/Trashbin/Hint/Move}}>{{$:/language/Buttons/Trashbin/Hint/Recycle}}</$list>
+list-after: $:/core/ui/Buttons/delete
+modified: 20200328140420576
 tags: $:/tags/ViewToolbar $:/tags/EditToolbar
 title: $:/plugins/kookma/trashbin/ui/toolbar-button
 type: text/vnd.tiddlywiki
 
-\whitespace trim
 \import $:/plugins/kookma/trashbin/macros/move-to-trashbin
 \import $:/plugins/kookma/trashbin/macros/restore
+\whitespace trim
 
 <!-- move to trashbin -->
 <$list filter="[all[current]!tag[$:/tags/trashbin]!prefix[$:/trashbin/]]">
@@ -24,6 +27,7 @@ type: text/vnd.tiddlywiki
   </$list>
 </$button>
 </$list>
+
 <!-- recycle from trashbin -->
 <$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]">
 <$button
