@@ -1,4 +1,5 @@
 caption: Trashbin
+list-after: 
 tags: $:/tags/SideBar
 title: $:/plugins/kookma/trashbin/sidebar-tab
 type: text/vnd.tiddlywiki
