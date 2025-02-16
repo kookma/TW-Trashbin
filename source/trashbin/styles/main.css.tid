@@ -24,6 +24,9 @@ type: text/vnd.tiddlywiki
 	flex-wrap: wrap;
 }
 
+.kk-trashbin-controls-row{
+	margin-bottom: 10px;
+}
 
 .kk-trashbin-row .kk-trashbin-delete,
 .kk-trashbin-row .kk-trashbin-restore {

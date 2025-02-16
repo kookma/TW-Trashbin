@@ -27,16 +27,16 @@ type: text/vnd.tiddlywiki
 
 \define trashbin-siderbar-ui()
 <div class="kk-trahbin-ui">
-
-<span class="kk-trahbin-ui-controls kk-trashbin-ui-btn">
-<<trashbin-empty-bin>> <<restore-all>> <<sort-by>> <<preview-option>>
-
-</span>&nbsp;
-<span style="font-size:smaller">
-<$list filter='[tag[$:/tags/trashbin]prefix[$:/trashbin/]limit[1]]'  variable=null emptyMessage="Trash bin is empty">
-<$count filter='[tag[$:/tags/trashbin]]'/> items in Trashbin
-</$list>
-</span>
+<div class="kk-trashbin-controls-row">
+	<span class="kk-trahbin-ui-controls kk-trashbin-ui-btn">
+	<<trashbin-empty-bin>> <<restore-all>> <<sort-by>> <<preview-option>>
+	</span>&nbsp;
+	<span style="font-size:smaller">
+	<$list filter='[tag[$:/tags/trashbin]prefix[$:/trashbin/]limit[1]]'  variable=null emptyMessage="Trash bin is empty">
+	<$count filter='[tag[$:/tags/trashbin]]'/> items in Trashbin
+	</$list>
+	</span>
+</div>
 
 <!-- create the trash items list -->
 <$list filter="[tag[$:/tags/trashbin]prefix[$:/trashbin/]$(sortType)$]">
@@ -46,7 +46,6 @@ type: text/vnd.tiddlywiki
 	<div class="kk-trashbin-delete kk-trashbin-ui-btn"><<delete-button>></div>
 </div>
 </$list>
-
 </div>
 \end
 
