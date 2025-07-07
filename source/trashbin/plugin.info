@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/kookma/trashbin",
-    "version": "1.3.5",
+    "version": "1.3.6",
     "stability": "STABILITY_2_STABLE",
     "name": "Trashbin",
     "description": "A trashbin mechanism for Tiddlywiki",
@@ -12,5 +12,5 @@
     "dependents": "",
     "plugin-type": "plugin",
     "core-version": ">= 5.1.22",
-    "packaged-by": "Gatha on 16th February 2025, 23:38:32"
+    "packaged-by": "Gatha on 7th July 2025, 18:23:06"
 }

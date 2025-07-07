@@ -1,13 +1,14 @@
 title: $:/plugins/kookma/trashbin/history
 type: text/vnd.tiddlywiki
 
-Full change log  https://kookma.github.io/TW-Trashbin/#ChangeLog
+Full change log https://kookma.github.io/TW-Trashbin/#ChangeLog
 
-* ''1.3.5'' -- 2024.05.17 -- update to TW 5.3.6 and some bug fixes
-* ''1.3.3'' -- 2024.05.17 -- update to TW 5.3.3 and some bug fixes
-* ''1.2.4'' -- 2022.12.02 -- update to TW 5.2.3 and minor bug fixes
-* ''1.2.3'' -- 2022.01.11 -- update to TW 5.2.1
-* ''1.2.2'' -- 2020.04.10 -- bug fix in remove draft tiddlers to trashbin
-* ''1.2.1'' -- 2020.03.30 -- bug fix and doc improvement and UI fade correction
-* ''1.1.2'' -- 2020.03.28 -- stable release with new features and bug fixes
-* ''0.1.0'' -- 2019.02.12 -- mature public release
+* ''1.3.5'' — 2025.07.07 — Updated to TiddlyWiki 5.3.7 with minor bug fixes.  
+* ''1.3.5'' — 2024.05.17 — Updated to TiddlyWiki 5.3.6 with several bug fixes.  
+* ''1.3.3'' — 2024.05.17 — Updated to TiddlyWiki 5.3.3 with several bug fixes.  
+* ''1.2.4'' — 2022.12.02 — Updated to TiddlyWiki 5.2.3 with minor bug fixes.  
+* ''1.2.3'' — 2022.01.11 — Updated to TiddlyWiki 5.2.1.  
+* ''1.2.2'' — 2020.04.10 — Fixed bug related to moving draft tiddlers to the trash bin.  
+* ''1.2.1'' — 2020.03.30 — Bug fixes, documentation improvements, and UI fade effect correction.  
+* ''1.1.2'' — 2020.03.28 — Stable release with new features and bug fixes.  
+* ''0.1.0'' — 2019.02.12 — Initial mature public release.

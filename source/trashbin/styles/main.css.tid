@@ -6,24 +6,16 @@ type: text/vnd.tiddlywiki
 .kk-trashbin-ui{
 	min-width:320px; /* controls the minimum width of whole ui */
 }
-
-.kk-trahbin-ui svg{
-    fill:#aaaaaa;
-}
-
 .kk-trahbin-ui .kk-trahbin-ui-controls svg{
  width:1.2em;
  height:1.2em;	
 }
-
-
 /* trashbin items list ui */
 .kk-trashbin-row{
 	display: flex;	
 	width: 95%;
 	flex-wrap: wrap;
 }
-
 .kk-trashbin-controls-row{
 	margin-bottom: 10px;
 }
@@ -33,19 +25,19 @@ type: text/vnd.tiddlywiki
 	flex-grow:0; width:20px;
 	margin-left:5px;
 }
-
 .kk-trashbin-row .kk-trashbin-link{
 	flex-grow:1; 
 	width: calc(100% - 50px); 
 	padding-right: 10px;
 }
-
-/* old:  .kk-trashbin-row:hover { background-color: #f6f6f6; } */
-.kk-trashbin-row:hover { background-color: <<colour pre-background>>; }
-
+.kk-trahbin-ui .kk-trahbin-ui-controls svg {
+	fill: <<colour sidebar-controls-foreground>>;
+}
+.kk-trahbin-ui .kk-trahbin-ui-controls button:hover svg,
+.kk-trahbin-ui .kk-trahbin-ui-controls a:hover svg {
+	fill: <<colour sidebar-controls-foreground-hover>>;
+}
+.kk-trashbin-row:hover { background-color: <<colour tiddler-info-background>>; }
 /* UI button fade-in*/
-.kk-trahbin-ui   button:hover svg         { fill: #000000; }
 .kk-trahbin-ui  .kk-trashbin-ui-btn       { opacity:0.5; }
 .kk-trahbin-ui  .kk-trashbin-ui-btn:hover { opacity:1.0; }
-
-
