@@ -4,7 +4,7 @@ dependents:
 description: A trashbin mechanism for Tiddlywiki
 list: readme license history
 name: Trashbin
-packaged-by: Gatha on 7th July 2025, 18:28:09
+packaged-by: Gatha on 11th August 2025, 12:16:47
 plugin-type: plugin
 source: https://github.com/kookma/TW-Trashbin
 stability: STABILITY_2_STABLE
